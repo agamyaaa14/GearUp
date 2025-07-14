@@ -55,8 +55,8 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/project-gearup.git
-cd project-gearup
+git clone https://github.com/agamyaaa14/GearUp.git
+cd GearUp
 ```
 
 ### 2. Install Dependencies
@@ -86,6 +86,3 @@ npm run dev
 
 This project was developed as part of a **college assignment** for learning purposes.  
 It showcases full-stack MERN development and is not deployed due to hosting limitations for MongoDB.
-
----
-
