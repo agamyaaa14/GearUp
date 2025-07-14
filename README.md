@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="<./screenshots/running-white.png>" alt="GearUp Logo" width="120" />
+  <img src="./screenshots/running-white.png" alt="GearUp Logo" width="120" />
 </p>
 
 <h1 align="center">GearUp - Full Stack Sports Gear Store</h1>
