@@ -1,0 +1,259 @@
+import Product from '../models/Product.js';
+import User from '../models/User.js';
+
+export const productsData = [
+  // Fitness Category
+  {
+    id: 'fit-001',
+    name: 'Premium Resistance Bands Set',
+    category: 'fitness',
+    price: 1299,
+    originalPrice: 1599,
+    image: 'https://t3.ftcdn.net/jpg/15/32/86/42/240_F_1532864247_paGljGZ2x14N4u1PVkC69fhvZ9PVVlN9.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Complete set of resistance bands with multiple resistance levels for full-body workouts.',
+    features: ['5 resistance levels', 'Door anchor included', 'Exercise guide', 'Carrying bag'],
+    inStock: true,
+    rating: 4.5,
+    reviews: 128,
+    stock: 50
+  },
+  {
+    id: 'fit-002',
+    name: 'Professional Dumbbells Set',
+    category: 'fitness',
+    price: 3499,
+    originalPrice: 4199,
+    image: 'https://t4.ftcdn.net/jpg/05/62/95/55/240_F_562955521_qMWmRrNofJx0vb8lPZUuIsWNK9DjzR27.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Adjustable dumbbells set perfect for home gym workouts.',
+    features: ['5-25kg per dumbbell', 'Quick-lock system', 'Ergonomic grip', 'Space-saving design'],
+    inStock: true,
+    rating: 4.7,
+    reviews: 89,
+    stock: 25
+  },
+  {
+    id: 'fit-003',
+    name: 'Yoga Mat Premium',
+    category: 'fitness',
+    price: 899,
+    originalPrice: 1199,
+    image: 'https://t4.ftcdn.net/jpg/00/91/40/97/240_F_91409774_aVFWIcsK2et4GacgNipl6pIuyFwdn3EE.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Extra thick yoga mat with superior grip and comfort.',
+    features: ['6mm thickness', 'Non-slip surface', 'Eco-friendly material', 'Carrying strap'],
+    inStock: true,
+    rating: 4.6,
+    reviews: 156,
+    stock: 75
+  },
+  {
+    id: 'fit-004',
+    name: 'Protein Shaker Bottle',
+    category: 'fitness',
+    price: 299,
+    originalPrice: 399,
+    image: 'https://t3.ftcdn.net/jpg/15/37/94/06/240_F_1537940635_GE2WvTx1kjG9oMdJhq4cNusL04hlwwwt.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'BPA-free protein shaker with mixing ball for smooth shakes.',
+    features: ['600ml capacity', 'Leak-proof design', 'Mixing ball included', 'Easy-grip handle'],
+    inStock: true,
+    rating: 4.3,
+    reviews: 234,
+    stock: 100
+  },
+  {
+    id: 'fit-005',
+    name: 'Home Gym Pull-up Bar',
+    category: 'fitness',
+    price: 1599,
+    originalPrice: 1999,
+    image: 'https://t4.ftcdn.net/jpg/13/26/48/99/240_F_1326489943_LKRvzEJX0rqJzEzCJpCFQaQZ9k2OvSfk.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Doorway pull-up bar with multiple grip positions.',
+    features: ['No screws required', '6 grip positions', 'Supports up to 120kg', 'Foam grips'],
+    inStock: true,
+    rating: 4.4,
+    reviews: 97,
+    stock: 30
+  },
+
+  // Cycling Category
+  {
+    id: 'cyc-001',
+    name: 'Professional Cycling Helmet',
+    category: 'cycling',
+    price: 2299,
+    originalPrice: 2799,
+    image: 'https://t4.ftcdn.net/jpg/14/48/30/29/240_F_1448302973_eP0wjWC2rmcpPN2KaI3k8KwPPBN4jVbF.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Lightweight cycling helmet with advanced ventilation system.',
+    features: ['CPSC certified', '18 vents', 'Adjustable fit', 'LED light compatible'],
+    inStock: true,
+    rating: 4.8,
+    reviews: 67,
+    stock: 40
+  },
+  {
+    id: 'cyc-002',
+    name: 'Cycling Jersey Pro',
+    category: 'cycling',
+    price: 1899,
+    originalPrice: 2299,
+    image: 'https://t3.ftcdn.net/jpg/11/78/62/06/240_F_1178620692_W8uDvwrGr6qzY7CzPfXIaS0PhSlWxgKQ.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Moisture-wicking cycling jersey with aerodynamic fit.',
+    features: ['Quick-dry fabric', '3 rear pockets', 'Full-length zipper', 'Reflective elements'],
+    inStock: true,
+    rating: 4.6,
+    reviews: 143,
+    stock: 60
+  },
+  {
+    id: 'cyc-003',
+    name: 'Bike Water Bottle',
+    category: 'cycling',
+    price: 399,
+    originalPrice: 499,
+    image: 'https://t3.ftcdn.net/jpg/02/15/72/98/240_F_215729840_3pNQbLUVRksegKDXJriOFrCXeXrBsenm.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Insulated bike water bottle with easy-squeeze design.',
+    features: ['750ml capacity', 'Insulated design', 'BPA-free', 'Easy-grip texture'],
+    inStock: true,
+    rating: 4.5,
+    reviews: 178,
+    stock: 80
+  },
+  {
+    id: 'cyc-004',
+    name: 'Cycling Gloves Pro',
+    category: 'cycling',
+    price: 699,
+    originalPrice: 899,
+    image: 'https://t3.ftcdn.net/jpg/15/47/74/62/240_F_1547746275_mCEOgIy3BrhOEriAshjT3SDiYP8uHPHh.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Padded cycling gloves with superior grip and comfort.',
+    features: ['Gel padding', 'Breathable mesh', 'Velcro closure', 'Touch-screen compatible'],
+    inStock: true,
+    rating: 4.4,
+    reviews: 92,
+    stock: 45
+  },
+  {
+    id: 'cyc-005',
+    name: 'Bike Lock Chain',
+    category: 'cycling',
+    price: 1199,
+    originalPrice: 1499,
+    image: 'https://t4.ftcdn.net/jpg/04/06/73/87/240_F_406738729_jmp5MjMGk2SloIrrw1RBmokdN77gerhD.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Heavy-duty chain lock for maximum bike security.',
+    features: ['Hardened steel', '1.2m length', 'Weather resistant', 'Key lock system'],
+    inStock: true,
+    rating: 4.7,
+    reviews: 56,
+    stock: 35
+  },
+
+  // Yoga Category
+  {
+    id: 'yog-001',
+    name: 'Yoga Block Set',
+    category: 'yoga',
+    price: 599,
+    originalPrice: 799,
+    image: 'https://t3.ftcdn.net/jpg/13/15/15/84/240_F_1315158476_2nzfigA7D8pP2b94lmjoNunxeJCLxn5Z.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'High-density yoga blocks for better alignment and support.',
+    features: ['Set of 2 blocks', 'Lightweight EVA foam', 'Non-slip surface', 'Easy to clean'],
+    inStock: true,
+    rating: 4.5,
+    reviews: 201,
+    stock: 70
+  },
+  {
+    id: 'yog-002',
+    name: 'Meditation Cushion',
+    category: 'yoga',
+    price: 1299,
+    originalPrice: 1599,
+    image: 'https://t4.ftcdn.net/jpg/14/75/54/05/240_F_1475540564_Ret7cu69amY6N5FiOplFpsI8fjyPttnZ.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Comfortable meditation cushion for proper posture during practice.',
+    features: ['Buckwheat hull filling', 'Removable cover', 'Perfect height', 'Machine washable'],
+    inStock: true,
+    rating: 4.6,
+    reviews: 87,
+    stock: 25
+  },
+  {
+    id: 'yog-003',
+    name: 'Yoga Strap Premium',
+    category: 'yoga',
+    price: 399,
+    originalPrice: 499,
+    image: 'https://t3.ftcdn.net/jpg/15/22/47/22/240_F_1522472219_P6t9KTlyuql3bt5JaTezu7LlbOZAj5Qk.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Durable yoga strap for deeper stretches and better flexibility.',
+    features: ['2.4m length', 'D-ring buckle', 'Cotton material', 'Multiple colors'],
+    inStock: true,
+    rating: 4.4,
+    reviews: 123,
+    stock: 90
+  },
+  {
+    id: 'yog-004',
+    name: 'Yoga Wheel',
+    category: 'yoga',
+    price: 1899,
+    originalPrice: 2299,
+    image: 'https://t4.ftcdn.net/jpg/01/87/33/09/240_F_187330916_oFREfCmXdTOGeDFeTDeESerRoRkem6dQ.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Yoga wheel for backbends, stretching, and muscle release.',
+    features: ['12" diameter', '6" width', 'TPE padding', 'Strong ABS frame'],
+    inStock: true,
+    rating: 4.7,
+    reviews: 65,
+    stock: 20
+  },
+  {
+    id: 'yog-005',
+    name: 'Yoga Mat Bag',
+    category: 'yoga',
+    price: 699,
+    originalPrice: 899,
+    image: 'https://t4.ftcdn.net/jpg/13/54/93/95/240_F_1354939500_KLtmrsDPtTPA3GMkVtW0Unow60Ve7bUC.jpg?auto=compress&cs=tinysrgb&w=500',
+    description: 'Stylish yoga mat bag with extra storage pockets.',
+    features: ['Full-zip design', 'Adjustable strap', 'Side pockets', 'Water-resistant'],
+    inStock: true,
+    rating: 4.3,
+    reviews: 156,
+    stock: 55
+  }
+];
+
+export const seedProducts = async () => {
+  try {
+    const existingProducts = await Product.countDocuments();
+    
+    if (existingProducts === 0) {
+      await Product.insertMany(productsData);
+      console.log('✅ Products seeded successfully');
+    }
+  } catch (error) {
+    console.error('❌ Error seeding products:', error);
+  }
+};
+
+export const seedUsers = async () => {
+  try {
+    const existingUsers = await User.countDocuments();
+    
+    if (existingUsers === 0) {
+      const demoUser = new User({
+        name: 'John Doe',
+        email: 'john@example.com',
+        password: 'password123',
+        phone: '+91 9876543210',
+        address: {
+          street: '123 Sports Avenue',
+          city: 'Mumbai',
+          state: 'Maharashtra',
+          pincode: '400001'
+        }
+      });
+      
+      await demoUser.save();
+      console.log('✅ Demo user created successfully');
+    }
+  } catch (error) {
+    console.error('❌ Error seeding users:', error);
+  }
+};

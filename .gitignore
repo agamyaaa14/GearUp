@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Build output
+dist/
+.vite/
+
+# Bolt config
+.bolt/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# VS Code settings (optional)
+.vscode/
+
+# ESLint cache
+.eslintcache
