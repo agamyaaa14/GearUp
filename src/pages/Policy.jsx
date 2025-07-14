@@ -156,7 +156,7 @@ const Policy = () => {
               e-commerce experience, this is not a real store and no actual transactions will be processed.
             </p>
             <div className="text-sm text-yellow-600">
-              <p className="mb-2"><strong>Last Updated:</strong> January 2024</p>
+              <p className="mb-2"><strong>Last Updated:</strong> July 2025</p>
               <p><strong>Contact:</strong> For questions about these policies, contact us at support@gearup.com</p>
             </div>
           </div>
